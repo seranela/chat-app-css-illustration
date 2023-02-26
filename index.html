@@ -1,51 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | [Challenge Name Here]</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+	<meta charset="UTF-8">
+	<meta name="description" content="Frontend Mentor Challenge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<title>Frontend Mentor | Chat App CSS Illustration</title>
 </head>
+
 <body>
+	<!-- Background Graphics -->
+	<div class="bg-graphics"></div>
 
-  Samuel Green
-  Available to Walk
+	<main class="main">
+		<!-- Phone design -->
+		<div class="phone-container">
+			<div class="phone">
+				<div class="phone-header">
+					<div class="phone-notch-container">
+						<div class="phone-notch"></div>
+					</div>
+					<div class="phone-profile">
+						<div class="back-arrow-container">
+							<div class="back-arrow"></div>
+						</div>
+						<div>
+							<img src="images/avatar.jpg" alt="" width="256" height="256" class="profile-avatar">
+						</div>
+						<div class="profile-details">
+							<span class="profile-name">Samuel Green</span>
+							<span class="profile-status">Available to Walk</span>
+						</div>
+						<div class="triple-dots"></div>
+					</div>
+				</div>
+				<div class="phone-messages">
+					<div class="messages-group">
+						<p id="user1-message1" class="phone-message phone-message-user1">
+							That sounds great. I'd be happy with that.
+						</p>
+						<p id="user1-message2" class="phone-message phone-message-user1">
+							Could you send over some pictures of your dog, please?
+						</p>
+					</div>
+					<div class="messages-group">
+						<div id="user2-message1" class="phone-message phone-pictures-user2">
+							<img src="images/dog-image-1.jpg" alt="" class="phone-picture">
+							<img src="images/dog-image-2.jpg" alt="" class="phone-picture">
+							<img src="images/dog-image-3.jpg" alt="" class="phone-picture">
+						</div>
+						<p id="user2-message2" class="phone-message phone-message-user2">
+							Here are a few pictures. She's a happy girl!
+						</p>
+						<p id="user2-message3" class="phone-message phone-message-user2">
+							Can you make it?
+						</p>
+					</div>
+					<div class="messages-group">
+						<p id="user1-message3" class="phone-message phone-message-user1">
+							She looks so happy! The time we discussed works.
+							How long shall I take her out for?
+						</p>
+						<fieldset id="walk-period-choices" class="walk-period-group">
+							<legend class="sr-only">Choose a walk period</legend>
 
-  That sounds great. I’d be happy with that.
+							<div id="choice1" class="radio-group">
+								<input type="radio" name="walk-period" id="walk-period1" class="radio-input">
+								<label for="walk-period1" class="radio-label">
+									<span class="walk-period-label">30 minute walk</span>
+									<span class="walk-period-cost">$29</span>
+								</label>
+							</div>
 
-  Could you send over some pictures of your dog, please?
+							<div id="choice2" class="radio-group">
+								<input type="radio" name="walk-period" id="walk-period2" class="radio-input">
+								<label for="walk-period2" class="radio-label">
+									<span class="walk-period-label">1 hour walk</span>
+									<span class="walk-period-cost">$49</span>
+								</label>
+							</div>
+						</fieldset>
+					</div>
+					<div class="phone-input-group">
+						<input type="text" id="phone-reply-input" placeholder="Type a message…" class="phone-input" readonly>
+						<label for="phone-reply-input" class="sr-only">Message to send</label>
+						<button class="phone-button">
+							<span class="sr-only">Send</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-  Here are a few pictures. She’s a happy girl!
-
-  Can you make it?
-
-  She looks so happy! The time we discussed works. How long shall I take her out for?
-
-  30 minute walk
-  $29
-
-  1 hour walk
-  $49
-
-  Type a message…
-
-  Simple booking
-
-  Stay in touch with our dog walkers through the chat interface. This makes it easy to 
-  discuss arrangements and make bookings. Once the walk has been completed you can rate 
-  your walker and book again all through the chat.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+		<div class="intro">
+			<h1 class="intro-heading">Simple booking</h1>
+			<p class="intro-paragraph">
+				Stay in touch with our dog walkers through the chat interface. This makes it easy to
+				discuss arrangements and make bookings. Once the walk has been completed you can rate
+				your walker and book again all through the chat.
+			</p>
+		</div>
+	</main>
 </body>
+
 </html>

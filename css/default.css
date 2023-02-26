@@ -1,0 +1,528 @@
+/* Variables */
+
+:root {
+	/* Fonts */
+
+	--font-main: 'Rubik', sans-serif; /* 400, 500, 700 */
+
+	/* Colors */
+
+	--color-primary-pale-violet: hsl(276, 100%, 81%);
+	--color-primary-moderate-violet: hsl(276, 55%, 52%);
+	--color-primary-muted-dark-violet: hsl(271, 15%, 43%);
+	--color-primary-gray-blue: hsl(206, 6%, 79%);
+	--color-primary-extra-dark-muted-violet: hsl(271, 36%, 24%);
+	--color-primary-dark-gray-violet: hsl(270, 7%, 64%);
+
+	--color-secondary-white: hsl(0, 0%, 100%);
+	--color-secondary-light-gray-violet: hsl(270, 20%, 96%);
+	--color-secondary-extra-dark-muted-violet: hsl(271, 36%, 24%);
+	--color-secondary-extra-light-magenta: hsl(289, 100%, 72%);
+
+	--color-light-magenta: hsl(293, 100%, 44%);
+	--color-light-violet: hsl(264, 100%, 61%);
+}
+
+/* Resets */
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body,
+h1,
+p {
+	margin: 0;
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+	min-width: 0;
+	height: auto;
+}
+
+/* Body */
+
+body {
+	/*background-color: #111;*/
+	font: 400 1rem var(--font-main);
+	text-rendering: optimizeSpeed;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Background Graphics */
+
+.bg-graphics {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.bg-graphics::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(
+		var(--color-light-magenta),
+		var(--color-light-violet)
+	);
+	width: 325px;
+	height: 425px;
+	clip-path: path('M 0 0 H 325 V 270 A 1 0.92 0 0 1 0 270 Z');
+	transform-origin: left top;
+	transform: scale(115%) translateX(-50%);
+}
+
+.bg-graphics::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(
+		hsl(290, 38%, 97%),
+		hsl(264, 33%, 97%)
+	);
+	width: 325px;
+	height: 425px;
+	clip-path: path('M 0 425 V 155 A 1 0.92 0 0 1 325 155 V 425 Z');
+	transform-origin: right bottom;
+	transform: scale(115%) translateX(50%);
+}
+
+/* Main Content */
+
+.main {
+	position: absolute;
+	top: auto;
+	left: auto;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	max-width: 60rem;
+}
+
+/* Phone */
+
+.phone-container {
+	display: flex;
+	justify-content: center;
+	z-index: 1;
+}
+
+.phone {
+	width: 15.5rem;
+	margin-top: 4rem;
+	background-color: var(--color-secondary-light-gray-violet);
+	border-radius: 32px;
+	border: 0.6rem solid var(--color-secondary-white);
+	box-shadow: 0 20px 30px hsla(0, 0%, 0%, 15%);
+	display: flex;
+	flex-direction: column;
+	font-size: 0.5rem;
+	overflow: hidden;
+}
+
+/* Phone - Header */
+
+.phone-header {
+	background: linear-gradient(
+		-90deg,
+		var(--color-light-magenta),
+		var(--color-light-violet)
+	);
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 0 0 6px 6px;
+}
+
+/* Phone - Notch Effect */
+
+.phone-notch-container {
+	flex-basis: 100%;
+}
+
+.phone-notch {
+	background-color: var(--color-secondary-white);
+	width: 55%;
+	height: 1.1rem;
+	margin: 0 auto;
+	border-radius: 0 0 16px 16px;
+}
+
+/* Phone - Profile */
+
+.phone-profile {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem;
+}
+
+.back-arrow-container {
+	transform: scaleX(55%);
+}
+
+.back-arrow {
+	width: 10px;
+	height: 10px;
+	border: solid var(--color-secondary-white);
+	border-width: 4px 0 0 4px;
+	display: inline-block;
+	color: var(--color-secondary-white);
+	transform-origin: center;
+	transform: rotateZ(-45deg) scale(80%);
+}
+
+.profile-avatar {
+	border-radius: 50%;
+	border: 2px solid hsla(0, 0%, 100%, 80%);
+	width: 1.5rem;
+}
+
+.profile-details {
+	flex: 1;
+}
+
+.profile-name {
+	display: block;
+	font-size: 0.7rem;
+	font-weight: 500;
+	color: var(--color-secondary-white);
+}
+
+.profile-status {
+	display: block;
+	color: var(--color-secondary-white);
+}
+
+.triple-dots {
+	background-color: var(--color-secondary-white);
+	width: 10px;
+	height: 10px;
+	clip-path: path("M1 0A1 1 0 011 2 1 1 0 011 0ZM1 3A1 1 0 011 5 1 1 0 011 3ZM1 6A1 1 0 011 8 1 1 0 011 6Z");
+}
+
+/* Phone - Text Messages */
+
+.phone-messages {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 0.5rem;
+}
+
+.messages-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.phone-message {
+	padding: 0.4rem 0.5rem;
+	line-height: 1.3;
+	transform: scale(0);
+}
+
+.phone-message-user1 {
+	background-color: hsla(276, 100%, 81%, 20%);
+	color: var(--color-primary-extra-dark-muted-violet);
+	border-radius: 11px 11px 11px 4px;
+	max-width: 65%;
+	transform-origin: left top;
+}
+
+.phone-message-user2 {
+	background-color: var(--color-secondary-white);
+	color: var(--color-primary-extra-dark-muted-violet);
+	border-radius: 11px 11px 4px 11px;
+	max-width: 65%;
+	box-shadow: 0 5px 8px hsla(0, 0%, 0%, 10%);
+	align-self: flex-end;
+	transform-origin: right bottom;
+}
+
+/* Phone - Pictures Message */
+
+.phone-pictures-user2 {
+	max-width: 100%;
+	align-self: flex-end;
+	display: flex;
+	gap: 0.5rem;
+}
+
+.phone-picture {
+	border-radius: 11px;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+/* Phone - Radio Inputs */
+
+.walk-period-group {
+	border: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	width: 80%;
+}
+
+.radio-group {
+	background: linear-gradient(
+		90deg,
+		var(--color-light-magenta),
+		var(--color-light-violet)
+	);
+	border-radius: 11px 11px 11px 4px;
+	padding: 0.6rem;
+	display: flex;
+	align-items: center;
+	transform: translateX(-105%);
+}
+
+.radio-input {
+	appearance: none;
+	border: 1px solid hsla(0, 0%, 100%, 60%);
+	width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 50%;
+	padding: 0;
+	margin: 0 0.5rem 0 0;
+	cursor: pointer;
+}
+
+.radio-label {
+	color: var(--color-secondary-white);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.walk-period-label {
+	flex: 1;
+}
+
+.walk-period-cost {
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+/* Phone - Animations */
+
+@keyframes message-show {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(100%);
+	}
+}
+
+@keyframes choice-show {
+	0% {
+		transform: translateX(-105%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.animate-message {
+	animation: 0.5s message-show forwards;
+}
+
+.animate-choice {
+	animation: 0.5s choice-show forwards;
+}
+
+/*	CSS-only approach without using JavaScript to give the effect
+	of chat messages populating the screen of mock phone. */
+
+#user1-message1 {
+	animation: 0.5s message-show 0s forwards;
+}
+
+#user1-message2 {
+	animation: 0.5s message-show 1s forwards;
+}
+
+#user2-message1 {
+	animation: 0.5s message-show 2s forwards;
+}
+
+#user2-message2 {
+	animation: 0.5s message-show 3s forwards;
+}
+
+#user2-message3 {
+	animation: 0.5s message-show 3.5s forwards;
+}
+
+#user1-message3 {
+	animation: 0.5s message-show 5s forwards;
+}
+
+#choice1 {
+	animation: 0.5s choice-show 6s forwards;
+}
+
+#choice2 {
+	animation: 0.5s choice-show 6.2s forwards;
+}
+
+/* Phone - Send Message */
+
+.phone-input-group {
+	display: flex;
+	align-items: center;
+}
+
+.phone-input {
+	font: inherit;
+	width: 100%;
+	height: 2.1rem;
+	padding: 0 1rem;
+	background-color: var(--color-secondary-white);
+	border-radius: 64px;
+	border: none;
+}
+
+.phone-input::placeholder {
+	color: var(--color-primary-extra-dark-muted-violet);
+}
+
+.phone-input,
+.phone-button {
+	cursor: not-allowed;
+}
+
+.phone-button {
+	background-color: var(--color-primary-extra-dark-muted-violet);
+	width: 1.9em;
+	height: 1.9em;
+	border-radius: 50%;
+	border: none;
+	margin-left: -1.8rem;
+	margin-right: 0.3rem;
+	position: relative;
+	color: var(--color-secondary-white);
+}
+
+.phone-button::after {
+	content: '';
+	position: relative;
+	top: 1px;
+	left: -1px;
+	width: 15px;
+	height: 15px;
+	border: solid var(--color-secondary-white);
+	border-width: 0 5px 5px 0;
+	display: inline-block;
+	color: var(--color-secondary-white);
+	transform-origin: center;
+	transform: scale(50%) rotateZ(-45deg);
+}
+
+/* Intro */
+
+.intro {
+	text-align: center;
+	padding: 1.5rem;
+}
+
+.intro-heading {
+	font-size: 2.6rem;
+	font-weight: 500;
+	letter-spacing: -0.02em;
+	color: var(--color-primary-extra-dark-muted-violet);
+	margin-bottom: 0.5em;
+}
+
+.intro-paragraph {
+	line-height: 1.6;
+	color: var(--color-primary-muted-dark-violet);
+}
+
+/* Responsive media queries */
+
+@media (min-width: 768px) {
+	/* Graphics (Top) */
+
+	.capsule {
+		transform: scale(1000%) translateX(-8px);
+	}
+
+	.phone-container {
+		left: 0;
+		width: 68%;
+	}
+
+	/* Background Graphics */
+
+	.bg-graphics::before {
+		transform: scale(165%) translateX(-22%);
+	}
+	
+	.bg-graphics::after {
+		transform: scale(165%) translateX(39%);
+	}
+
+	/* Main Content */
+
+	.main {
+		flex-direction: row;
+		gap: 0;
+	}
+
+	/* Phone */
+
+	.phone-container {
+		width: 49%;
+	}
+
+	/* Intro */
+
+	.intro {
+		flex: 1;
+		text-align: left;
+	}
+}
+
+/* Utility */
+
+.hidden {
+	display: none;
+}
+
+.sr-only { /* Screen readers only */
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
