@@ -74,10 +74,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: linear-gradient(
-		var(--color-light-magenta),
-		var(--color-light-violet)
-	);
+	background: linear-gradient(200deg, var(--color-secondary-extra-light-magenta), var(--color-light-violet) 80%);
 	width: 325px;
 	height: 425px;
 	clip-path: path('M 0 0 H 325 V 270 A 1 0.92 0 0 1 0 270 Z');
